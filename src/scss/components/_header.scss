@@ -1,0 +1,43 @@
+.header {
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.17);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    @include big-mobile {
+      flex-wrap: wrap;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    @include mobile {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__logo {
+    @include big-mobile {
+      margin-bottom: 10px;
+    }
+
+    @include mobile {
+      order: -2;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+
+    & .btn-stroke {
+      margin-right: 20px;
+    }
+  }
+}

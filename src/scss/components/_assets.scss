@@ -1,0 +1,99 @@
+.assets {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include mobile {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+    color: var(--color-water);
+
+    @include big-mobile {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 14px;
+      font-size: 30px;
+    }
+
+    &::after {
+      content: url(../img/title-border.svg);
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__descr {
+    grid-column: 6 span;
+    margin: 0;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--color-manatee);
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include big-mobile {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include mobile {
+      grid-column: 6 span;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--gap);
+
+    @include mobile {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0;
+    }
+  }
+
+  &__item {
+    grid-column:  3 span;
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__article {
+    height: 100%;
+  }
+}

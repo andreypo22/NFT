@@ -1,0 +1,123 @@
+.start {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--gap);
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0;
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__title {
+    position: relative;
+    grid-column: 12 span;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+    color: var(--color-water);
+
+    @include big-mobile {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 14px;
+      font-size: 30px;
+    }
+  }
+
+  &__descr {
+    grid-column: 6 span;
+    margin: 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--color-manatee);
+
+    @include small-tablet {
+      grid-column: 8 span;
+    }
+
+    @include big-mobile {
+      grid-column: 12 span;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__btn {
+    grid-column: 10 / 3 span;
+    justify-self: end;
+    padding: 12px 10px;
+    height: max-content;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: var(--color-water);
+
+    @include small-tablet {
+      grid-column: 9 / 4 span;
+      padding: 6px 10px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    grid-column: 12 span;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--gap);
+
+    @include mobile {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0;
+    }
+  }
+
+  &__item {
+    grid-column: 3 span;
+    height: 100%;
+
+    @include small-tablet {
+      grid-column: 4 span;
+    }
+
+    @include big-mobile {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      height: auto;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__article {
+    height: 100%;
+  }
+}

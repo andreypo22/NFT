@@ -1,0 +1,140 @@
+.creat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px 53px 10px;
+
+  &__image {
+    margin-bottom: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #191B20;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow .2s ease-in-out;
+
+    @include small-tablet {
+      margin-bottom: 20px;
+    }
+
+    &-1 {
+      background-image: url(../img/creat-card-1.svg);
+    }
+
+    &-2 {
+      background-image: url(../img/creat-card-2.svg);
+    }
+
+    &-3 {
+      background-image: url(../img/creat-card-3.svg);
+    }
+
+    &-4 {
+      background-image: url(../img/creat-card-4.svg);
+    }
+
+    &-5 {
+      background-image: url(../img/creat-card-5.svg);
+    }
+
+    &-6 {
+      background-image: url(../img/creat-card-6.svg);
+    }
+
+    &-7 {
+      background-image: url(../img/creat-card-7.svg);
+    }
+
+    &-8 {
+      background-image: url(../img/creat-card-8.svg);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 40px;
+    color: var(--color-silver);
+    transition: color .2s ease-in-out;
+
+    @include mobile {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  &__descr {
+    margin-top: auto;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-silver);
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-red);
+    border-radius: 10px;
+    z-index: 3;
+    transition: background-color .2s ease-in-out;
+
+    @include focus {
+      background-color: var(--color-red);
+
+      .creat-card__icon {
+        fill: var(--color-white);
+      }
+    }
+
+    @include hover {
+      background-color: var(--color-red);
+
+      .creat-card__icon {
+        fill: var(--color-white);
+      }
+    }
+
+    @include active {
+      border-color: var(--color-haze);
+      background-color: var(--color-shark-dark);
+
+      .creat-card__icon {
+        fill: var(--color-haze);
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 10px;
+    fill: var(--color-red);
+    transition: fill .2s ease-in-out;
+  }
+
+  @include hover {
+    .creat-card__image {
+      box-shadow: inset -4px 4px 15px rgba(255, 1, 79, 0.5);
+    }
+
+    .creat-card__title {
+      color: var(--color-red);
+    }
+
+
+  }
+}

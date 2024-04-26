@@ -1,0 +1,129 @@
+.choices {
+  &__inner {
+    position: relative;
+    background-color: var(--color-red);
+    border: 1px solid var(--color-red);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--color-white);
+    z-index: 4;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
+
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @include mobile {
+      min-height: 32px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &[data-type*=select-one] .choices__inner {
+    padding: 12px 56px 12px 24px;
+
+    @include small-tablet {
+      padding: 6px 56px 6px 18px;
+    }
+  }
+
+  &[data-type*=select-one]::after {
+    content: url(../img/svg/select-arrow.svg);
+    margin: 0;
+    height: 11px;
+    width: 20px;
+    border: none;
+    right: 11.5px;
+    top: calc(50% - 5.5px);
+    z-index: 5;
+    transition: transform .2s ease-in-out;
+
+    @include small-tablet {
+      top: calc(50% - 6.5px);
+    }
+  }
+
+  &[data-type*=select-one].is-open::after {
+    margin-top: 5px;
+    transform: rotate(180deg);
+
+    @include small-tablet {
+      margin-top: 3px;
+    }
+  }
+
+  &__list--single {
+    padding: 0;
+  }
+
+  &__list--dropdown, .choices__list[aria-expanded] {
+    margin-top: -30px;
+    padding-top: 34px;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--color-tuna);
+    z-index: 3;
+  }
+
+  &__list--dropdown .choices__list .choices__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--color-white);
+
+    @include small-tablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &--selectable {
+      padding-right: 10px;
+
+      &[data-id="1"] {
+        display: none;
+      }
+
+      &.is-highlighted {
+        border-radius: 5px;
+        background-color: var(--color-red);
+      }
+
+      &:hover {
+        background-color: var(--color-red);
+      }
+    }
+  }
+
+  &.is-open, &.is-focused {
+    & .choices__inner {
+      border-color: var(--color-red);
+      border-radius: 30px;
+    }
+  }
+
+  @include focus {
+    & .choices__inner {
+      border-color: var(--color-white);
+      background-color: var(--color-wood);
+    }
+  }
+
+  @include hover {
+    & .choices__inner {
+      border-color: var(--color-white);
+      background-color: var(--color-orange);
+    }
+  }
+
+  @include active {
+    & .choices__inner {
+      border-color: var(--color-white);
+      background-color: var(--color-shark);
+    }
+  }
+}

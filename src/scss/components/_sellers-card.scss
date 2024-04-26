@@ -1,0 +1,146 @@
+.sellers-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+
+  @include small-tablet {
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    margin-right: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-shuttle);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 10px;
+
+    @include small-tablet {
+      margin-bottom: 10px;
+    }
+
+    &-1 {
+      background-image: url(../img/sellers-card-1.png);
+    }
+
+    &-2 {
+      background-image: url(../img/sellers-card-2.png);
+    }
+
+    &-3 {
+      background-image: url(../img/sellers-card-3.png);
+    }
+
+    &-4 {
+      background-image: url(../img/sellers-card-4.png);
+    }
+
+    &-5 {
+      background-image: url(../img/sellers-card-5.png);
+    }
+
+    &-6 {
+      background-image: url(../img/sellers-card-6.png);
+    }
+
+    &-7 {
+      background-image: url(../img/sellers-card-7.png);
+    }
+
+    &-8 {
+      background-image: url(../img/sellers-card-8.png);
+    }
+
+    &-9 {
+      background-image: url(../img/sellers-card-9.png);
+    }
+
+    &-10 {
+      background-image: url(../img/sellers-card-10.png);
+    }
+
+    &-11 {
+      background-image: url(../img/sellers-card-11.png);
+    }
+
+    &-12 {
+      background-image: url(../img/sellers-card-12.png);
+    }
+
+    &-13 {
+      background-image: url(../img/sellers-card-13.png);
+    }
+
+    &-14 {
+      background-image: url(../img/sellers-card-14.png);
+    }
+
+    &-15 {
+      background-image: url(../img/sellers-card-15.png);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+
+    &-name {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      color: var(--color-concrete);
+      transition: color .2s ease-in-out;
+
+      @include small-tablet {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-price {
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 30px;
+      color: var(--color-silver);
+      background-image: url(../img/sellers-card-icon.png);
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+  }
+
+  &__percent {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+
+    &-green {
+      color: var(--color-lime);
+    }
+
+    &-red {
+      color: var(--color-red);
+    }
+
+    &-orange {
+      color: var(--color-orange);
+    }
+  }
+
+  @include focus {
+    .sellers-card__info-name {
+      color: var(--color-red);
+    }
+  }
+
+  @include hover {
+    .sellers-card__info-name {
+      color: var(--color-red);
+    }
+  }
+}

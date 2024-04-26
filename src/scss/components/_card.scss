@@ -1,0 +1,34 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-shark-card);
+  border-radius: 10px;
+
+  @include hover {
+    background: linear-gradient(133.27deg, #23252B 3%, #17191D 98.83%);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: -4px 4px 18px rgba(0, 0, 0, 0.43);
+    border-radius: 10px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px -4px 10px rgba(80, 80, 80, 0.3);
+    border-radius: 10px;
+  }
+}

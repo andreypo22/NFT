@@ -1,0 +1,328 @@
+.footer {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--gap);
+    padding-top: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0;
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__logotip {
+    grid-column: 3 span;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      grid-column: 12 span;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    &-image {
+      display: block;
+      width: 153px;
+
+      @include big-mobile {
+        width: 130px;
+      }
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: var(--color-silver);
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include big-mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__information {
+    grid-column: 9 span;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      grid-column: 12 span;
+    }
+
+    @include big-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__account {
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+      margin-right: 20px;
+    }
+
+    @include big-mobile {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: var(--color-white);
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include small-tablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 18px;
+    list-style-image: url(../img/list-style-icon.svg);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include small-tablet {
+        margin-bottom: 10px;
+      }
+
+      @include mobile {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-white);
+    transition: color .2s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -4px;
+      bottom: -1px;
+      left: -4px;
+      border-radius: 5px;
+      background-color: transparent;
+      transition: background-color .2s ease-in-out;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background-color: transparent;
+      transition: background-color .2s ease-in-out;
+    }
+
+    @include focus {
+      &::before {
+        background-color: var(--color-red);
+      }
+    }
+
+    @include hover {
+      color: var(--color-red);
+    }
+
+    @include active {
+      &::after {
+        background-color: var(--color-red);
+      }
+    }
+
+    @include small-tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__web {
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+      margin-right: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @include small-tablet {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      margin-right: 20px;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 37px;
+      color: var(--color-white);
+
+      @include small-tablet {
+        margin-right: 10px;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    &-info {
+      position: relative;
+      max-width: 270px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+      color: var(--color-white);
+      transition: color .2s ease-in-out;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        right: -4px;
+        bottom: -1px;
+        left: -4px;
+        border-radius: 5px;
+        background-color: transparent;
+        transition: background-color .2s ease-in-out;
+        z-index: -1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        transition: background-color .2s ease-in-out;
+      }
+
+      @include small-tablet {
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 23px;
+      }
+    }
+
+    &-tel, &-email {
+      @include focus {
+        &::before {
+          background-color: var(--color-red);
+        }
+      }
+
+      @include hover {
+        color: var(--color-red);
+      }
+
+      @include active {
+        &::after {
+          background-color: var(--color-red);
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    grid-column: 12 span;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid var(--color-silver);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-white);
+
+    @include mobile {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

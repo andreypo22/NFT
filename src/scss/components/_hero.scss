@@ -1,0 +1,137 @@
+.hero {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--gap);
+    background-image: url(../img/hero-back.png);
+    background-repeat: no-repeat;
+    background-position: right max(30px, calc((100% - var(--content-width)) / 2)) top 180px;
+
+    @include tablet {
+      background-size: 50%;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+      background-image: none;
+    }
+  }
+
+  &__content {
+    grid-column: 7 span;
+    display: flex;
+    flex-direction: column;
+    padding-top: 254px;
+    padding-bottom: 150px;
+
+    @include tablet {
+      padding-top: 154px;
+      padding-bottom: 50px;
+    }
+
+    @include small-tablet {
+      padding-top: 130px;
+      padding-bottom: 40px;
+    }
+
+    @include big-mobile {
+      grid-column: 8 span;
+      padding-bottom: 30px;
+    }
+
+    @include mobile {
+      grid-column: 1 span;
+      padding-top: 180px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 90px;
+    text-transform: capitalize;
+    color: var(--color-water);
+
+    @include small-tablet {
+      font-size: 40px;
+      line-height: 60px;
+    }
+
+    @include big-mobile {
+      font-size: 34px;
+      line-height: 46px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+
+  &__descr {
+    display: flex;flex-direction: column;
+    margin: 0;
+    margin-bottom: 70px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: var(--color-manatee);
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    margin-top: auto;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    & .btn-fill {
+      margin-right: 20px;
+
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__btn {
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include big-mobile {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}

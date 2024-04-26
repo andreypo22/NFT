@@ -1,0 +1,56 @@
+.info-card {
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: var(--color-white);
+    text-align: center;
+
+    @include big-mobile {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  &__count {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: var(--color-silver);
+
+    @include big-mobile {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    width: 149px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-white);
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 2;
+
+    @include big-mobile {
+      font-size: 20px;
+    }
+  }
+}

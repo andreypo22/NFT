@@ -1,0 +1,38 @@
+.burger {
+  @include burger;
+
+  display: none;
+  color: var(--color-red);
+  z-index: 7;
+  transition: color .2s ease-in-out;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include mobile {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  &__line {
+    background-color: var(--color-red);
+    transition: background-color .2s ease-in-out;
+  }
+
+  @include focus {
+    color: var(--color-haze);
+
+    & .burger__line {
+      background-color: var(--color-haze);
+    }
+  }
+
+  @include hover {
+    color: var(--color-haze);
+
+    & .burger__line {
+      background-color: var(--color-haze);
+    }
+  }
+}

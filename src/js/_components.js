@@ -1,0 +1,11 @@
+import './components/assets-card';
+import './components/category-card-slider1';
+import './components/category-card-slider2';
+import './components/category-card-slider3';
+import './components/category-card-slider4';
+import './components/category-card-slider5';
+import './components/category-card-slider6';
+import './components/category-card-slider7';
+import './components/category-card-slider8';
+import './components/category-select';
+import './components/sellers-select';
